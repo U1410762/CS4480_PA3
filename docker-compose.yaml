@@ -1,0 +1,120 @@
+services:
+    r1:
+        build:
+            context: .
+            dockerfile: Dockerfile.r1
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net14:
+                ipv4_address: 10.0.14.4
+            net15:
+                ipv4_address: 10.0.15.4
+
+    r2:
+        build:
+            context: .
+            dockerfile: Dockerfile.r2
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net15:
+                ipv4_address: 10.0.15.5
+            net18:
+                ipv4_address: 10.0.18.5
+
+    r3:
+        build:
+            context: .
+            dockerfile: Dockerfile.r3
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net18:
+                ipv4_address: 10.0.18.6
+            net17:
+                ipv4_address: 10.0.17.6
+            net19:
+                ipv4_address: 10.0.19.6
+
+    r4:
+        build:
+            context: .
+            dockerfile: Dockerfile.r4
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net16:
+                ipv4_address: 10.0.16.7
+            net17:
+                ipv4_address: 10.0.17.7
+
+    ha:
+        build:
+            context: .
+            dockerfile: Dockerfile.ha
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net14:
+                ipv4_address: 10.0.14.3
+
+    hb:
+        build:
+            context: .
+            dockerfile: Dockerfile.hb
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        privileged: true
+        networks:
+            net19:
+                ipv4_address: 10.0.19.3
+
+networks:
+    net14:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.14.0/24
+    net15:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.15.0/24
+    net16:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.16.0/24
+    net17:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.17.0/24
+    net18:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.18.0/24
+    net19:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.19.0/24
