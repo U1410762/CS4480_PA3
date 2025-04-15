@@ -8,4 +8,6 @@ COPY OSPF_setup.sh OSPF_setup.sh
 RUN chmod +x OSPF_setup.sh
 RUN OSPF_setup.sh
 
+COPY daemons daemons
+
 CMD ["bash"]
