@@ -4,9 +4,10 @@ RUN apt-get update
 RUN apt-get -y install bash iproute2 net-tools tcpdump vim iputils-ping
 RUN apt-get clean
 
-COPY ./OSPF_setup.sh /app/OSPF_setup.sh
+RUN mkdir app
+COPY OSPF_setup.sh /app/OSPF_setup.sh
 RUN chmod +x /app/OSPF_setup.sh
-RUN /app/OSPF_setup.sh
+RUN bash /app/OSPF_setup.sh 
 
 COPY daemons /etc/frr/daemons
 
