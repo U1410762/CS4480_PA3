@@ -8,8 +8,8 @@ RUN mkdir app
 COPY OSPF_setup.sh /app/OSPF_setup.sh
 RUN chmod +x /app/OSPF_setup.sh
 RUN bash /app/OSPF_setup.sh
-RUN service frr restart 
-
 COPY daemons /etc/frr/daemons
+
+RUN service frr restart
 
 CMD ["bash"]
