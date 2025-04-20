@@ -6,7 +6,7 @@ import sys
 args = sys.argv
 
 if "help" in args:
-    print("Help shown here.")
+    print("Use 'setup' argument to set up the network.\nUse 'north' to switch traffic to the north interface (route through r2).\nUse 'south' to switch traffic to the south interface (route through r4)\n")
 
 elif "setup" in args:
     print("Setting up network...")
