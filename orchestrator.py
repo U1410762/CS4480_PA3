@@ -13,7 +13,7 @@ elif "setup" in args:
     os.chmod("./network_setup.sh", stat.S_IRWXO)
     # set up network
     subprocess.call("./network_setup.sh")
-    ``
+
 elif "north" in args:
     os.chmod("./route_through_r2.sh", stat.S_IRWXO)
     subprocess.call("./route_through_r2.sh")
