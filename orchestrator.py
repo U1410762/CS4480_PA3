@@ -15,12 +15,10 @@ elif "setup" in args:
     subprocess.call("./network_setup.sh");
     
 elif "north" in args:
-    print("Mod to r2")
-    # mod to r2
-    pass
+    os.chmod("./route_through_r2.sh", stat.S_IRWXO)
+    subprocess.call("./route_through_r2.sh");
 
 elif "south" in args:
-    print("Mod to r4")
-    # mod to r4
-    pass
+    os.chmod("./route_through_r4.sh", stat.S_IRWXO)
+    subprocess.call("./route_through_r4.sh");
 
