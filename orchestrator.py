@@ -14,12 +14,12 @@ elif "setup" in args:
     # set up network
     subprocess.call("./network_setup.sh");
     
-elif "n" in args:
+elif "north" in args:
     print("Mod to r2")
     # mod to r2
     pass
 
-elif "s" in args:
+elif "south" in args:
     print("Mod to r4")
     # mod to r4
     pass
