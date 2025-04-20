@@ -7,6 +7,5 @@ interface eth0
 interface eth1
  ip ospf cost 1
 end
-clear ip ospf process
 write memory
 EOF
